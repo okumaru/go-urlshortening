@@ -1,0 +1,15 @@
+<h1>Form Shortener</h1>
+
+<p>[<a href="/{{.Key}}">Go to Redirect</a>] | [<a href="/remove/{{.Key}}">Remove</a>]</p>
+
+<form action="/save" method="POST">
+  <div>
+    <input type="text" name="key" value="{{.Key}}" />
+  </div>
+  <div>
+    <textarea name="dest" rows="20" cols="80">{{printf "%s" .Dest}}</textarea>
+  </div>
+  <div>
+    <input type="submit" value="Save">
+  </div>
+</form>
